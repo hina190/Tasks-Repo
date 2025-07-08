@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Work Sans', sans-serif;
+  min-height: 100vh;
+  padding-top: 3%;
+}
+
+/* Themes */
+.standard {
+  background-image: linear-gradient(100deg, #575656, #062e3f);
+  color: #ffdfdb;
+}
+
+/* Header */
+#header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 3rem;
+  min-height: 25vh;
+  width: 100%;
+}
+
+/* Animated Title Text */
+#title {
+  border-right: solid 3px rgba(0, 0, 0, 0.75);
+  white-space: pre;
+  overflow: hidden;
+  letter-spacing: 0.20rem;
+  margin: 50px 0 20px;
+  max-width: 480px;
+
+  animation: animated-text 2s steps(11,end) 0.5s 1 normal both,
+             animated-cursor 750ms steps(11,end) infinite;
+}
+
+@keyframes animated-text {
+  from { width: 0%; }
+  to { width: 480px; }
+}
+
+@keyframes animated-cursor {
+  from { border-right-color: rgba(0, 0, 0, 0.75); }
+  to { border-right-color: transparent; }
+}
+
+/* Form */
+form {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+  padding: 0.8rem;
+  width: 100%;
+}
+
+form input {
+  padding: 10px;
+  font-size: 17px;
+  border: none;
+  outline: none;
+  border-top-left-radius: 17px;
+  border-bottom-left-radius: 17px;
+  max-width: 500px;
+  width: 100%;
+}
+
+form input.standard-input {
+  background-color: #181a1a;
+  color: #f7e2df;
+}
+
+form button {
+  padding: 10px;
+  font-size: 17px;
+  border: none;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  min-width: 100px;
+  cursor: pointer;
+}
+
+button.standard-button {
+  background-color: #f7e2df;
+  color: black;
+}
+
+button.standard-button:hover {
+  background-color: white;
+  box-shadow: 0 0 10px #fff8;
+}
+
+/* Task List */
+#myUnOrdList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+}
+
+.todo-list {
+  min-width: 25%;
+  list-style: none;
+}
+
+.todo {
+  margin: 1rem;
+  font-size: 19px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25em 0.5em;
+  border-radius: 30px;
+  background-color: #1a1b1b;
+}
+
+.todo li {
+  padding: 7px;
+  font-size: 20px;
+  flex: 1;
+  border-radius: 30px;
+  overflow-wrap: anywhere;
+}
+
+.check-btn, .delete-btn {
+  font-size: 19px;
+  width: 2em;
+  height: 2em;
+  border-radius: 80%;
+  margin: 0 5px;
+  cursor: pointer;
+}
